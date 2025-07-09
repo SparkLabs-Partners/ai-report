@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The State of AI: H1 2025 Report - Part V Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide-react@0.292.0/dist/lucide-react.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0e1a;
+            color: #e0e0e0;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #67e8f9, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .section-title-border {
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        .section-title-border::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #67e8f9, #a78bfa);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Title -->
+    <header class="py-8 md:py-12 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-sm font-semibold uppercase tracking-widest text-cyan-400">The AI Global Report</h2>
+            <h1 class="text-4xl md:text-6xl font-extrabold mt-2 text-white">Part V: The Technology Frontier</h1>
+            <p class="text-xl md:text-2xl mt-4 gradient-text font-medium">A Detailed Analysis of H1 2025</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 pb-16">
+        
+        <!-- Part V: The Technology Frontier -->
+        <section id="technology" class="mb-16">
+            <div class="space-y-12">
+                <!-- Chapter 12: The Model Arms Race -->
+                <div class="bg-slate-900/50 p-8 rounded-lg border border-slate-800">
+                    <h3 class="text-2xl font-bold text-cyan-300 mb-2">Chapter 12: The Model Arms Race</h3>
+                    <p class="text-gray-400 mb-8">The pace of AI model development is accelerating at an unprecedented rate. While performance on key benchmarks continues to climb, the frontier is also converging, with the gap between leading models shrinking. A new paradigm of efficiency is emerging, with smaller, more cost-effective models achieving previous state-of-the-art performance.</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-lg text-white mb-4">Benchmark Performance (H1 2025)</h4>
+                            <div class="space-y-3">
+                                <div class="stat-card p-4 rounded-lg">
+                                    <p class="text-sm text-gray-400">GPQA (Expert Questions)</p>
+                                    <p class="text-xl font-bold text-white">Google's Gemini 2.5 Pro leads with 86.4%</p>
+                                </div>
+                                <div class="stat-card p-4 rounded-lg">
+                                    <p class="text-sm text-gray-400">SWE-Bench (Agentic Coding)</p>
+                                    <p class="text-xl font-bold text-white">Anthropic's Claude 4 Sonnet scores 72.7%</p>
+                                </div>
+                                <div class="stat-card p-4 rounded-lg">
+                                    <p class="text-sm text-gray-400">Rate of Improvement (2023-2024)</p>
+                                    <p class="text-xl font-bold text-white">GPQA performance rose by 48.9 percentage points</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-lg text-white mb-4">The Converging Frontier & Efficiency Paradigm</h4>
+                            <p class="text-gray-400 mb-4">The performance gap between the top-ranked model and the 10th-ranked model on Chatbot Arena fell from 11.9% to just <strong class="text-cyan-400">5.4%</strong> in one year. Simultaneously, model efficiency has seen a <strong class="text-cyan-400">142-fold reduction</strong> in size needed for high performance on MMLU since 2022.</p>
+                             <div class="stat-card p-4 rounded-lg text-center">
+                                <p class="text-sm text-gray-400">Price per Million Tokens</p>
+                                <p class="text-2xl font-bold text-white">Gemini 2.5 Flash: $0.26</p>
+                                <p class="text-lg font-bold text-gray-400">vs.</p>
+                                <p class="text-2xl font-bold text-white">GPT-4.1 mini: $0.70</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 13: The Hardware Backbone -->
+                <div class="bg-slate-900/50 p-8 rounded-lg border border-slate-800">
+                    <h3 class="text-2xl font-bold text-violet-300 mb-2">Chapter 13: The Hardware Backbone</h3>
+                    <p class="text-gray-400 mb-8">The AI arms race is built on a foundation of unprecedented hardware investment and innovation. Hyperscalers are projected to spend over $220 billion on AI infrastructure by 2025. However, this explosion in computational power brings a critical challenge: the immense and growing demand for energy and water.</p>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-lg text-white mb-4">The Semiconductor & Edge AI Arms Race</h4>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start"><svg class="w-5 h-5 mr-3 text-violet-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v1H5V4zM5 7h10v9a2 2 0 01-2 2H7a2 2 0 01-2-2V7z"></path></svg><span>ASICs' market share to rise from 22% to <strong class="text-white">30%</strong> by 2025, cutting into GPU dominance.</span></li>
+                                <li class="flex items-start"><svg class="w-5 h-5 mr-3 text-violet-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg><span>Edge AI market projected to reach <strong class="text-white">$200 billion</strong> with a 24% CAGR through 2030.</span></li>
+                                <li class="flex items-start"><svg class="w-5 h-5 mr-3 text-violet-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg><span>Over <strong class="text-white">970 million</strong> smartphones expected to ship with on-board NPUs in 2025.</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white mb-4">The Energy Imperative</h4>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start"><svg class="w-5 h-5 mr-3 text-violet-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg><span>Data center power demand could surge to over <strong class="text-white">1,000 TWh</strong> by 2030, driven by AI.</span></li>
+                                <li class="flex items-start"><svg class="w-5 h-5 mr-3 text-violet-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7 2a1 1 0 00-1 1v1H4a1 1 0 00-1 1v3a1 1 0 001 1h12a1 1 0 001-1V5a1 1 0 00-1-1h-2V3a1 1 0 00-1-1H7zM4 11v3a1 1 0 001 1h10a1 1 0 001-1v-3H4z" clip-rule="evenodd"></path></svg><span>Next-gen GPUs expected to reach <strong class="text-white">1,200 watts</strong>, up from 400 watts in 2022.</span></li>
+                                <li class="flex items-start"><svg class="w-5 h-5 mr-3 text-violet-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 3.5a1.5 1.5 0 01.5 2.915V11.5a1.5 1.5 0 01-3 0V6.415A1.5 1.5 0 0110 3.5z"></path><path d="M5.13 9.24a.5.5 0 00-.63.63l1.2 3.2a.5.5 0 00.94-.35l-1-3.2a.5.5 0 00-.31-.28zM14.87 9.24a.5.5 0 01.63.63l-1.2 3.2a.5.5 0 01-.94-.35l1-3.2a.5.5 0 01.31-.28z"></path><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM2 10a8 8 0 1116 0 8 8 0 01-16 0z" clip-rule="evenodd"></path></svg><span>Training a model like GPT-3 can consume <strong class="text-white">700,000 liters</strong> of fresh water.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-slate-800 mt-12 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center text-gray-500">
+            <p>&copy; 2025 AI Global Report. All Rights Reserved.</p>
+            <p class="text-xs mt-2">This document is a visual interpretation of "The State of AI: H1 2025" summary. Data is sourced from the provided document.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

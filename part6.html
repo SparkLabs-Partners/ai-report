@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The State of AI: H1 2025 Report - Part VI Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide-react@0.292.0/dist/lucide-react.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0e1a;
+            color: #e0e0e0;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #fde047, #f97316, #ef4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .section-title-border {
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        .section-title-border::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #fde047, #f97316);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Title -->
+    <header class="py-8 md:py-12 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-sm font-semibold uppercase tracking-widest text-yellow-400">The AI Global Report</h2>
+            <h1 class="text-4xl md:text-6xl font-extrabold mt-2 text-white">Part VI: The Human & Societal Dimension</h1>
+            <p class="text-xl md:text-2xl mt-4 gradient-text font-medium">A Detailed Analysis of H1 2025</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 pb-16">
+        
+        <!-- Part VI: The Human and Societal Dimension -->
+        <section id="societal" class="mb-16">
+            <div class="space-y-12">
+                <!-- Chapter 14: The Future of Work & Education -->
+                <div class="bg-slate-900/50 p-8 rounded-lg border border-slate-800">
+                    <h3 class="text-2xl font-bold text-yellow-300 mb-2">Chapter 14: The Future of Work & Education</h3>
+                    <p class="text-gray-400 mb-8">AI is acting as a powerful catalyst for change in the labor market, initiating a "Great Skills Reshuffle." The demand for AI-related skills is skyrocketing, creating a significant wage premium. Meanwhile, educational institutions are struggling to adapt their policies and training to this new reality.</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-lg text-white mb-4">The Great Skills Reshuffle</h4>
+                            <div class="space-y-3">
+                                <div class="stat-card p-4 rounded-lg">
+                                    <p class="text-xl font-bold text-white">66% Faster</p>
+                                    <p class="text-sm text-gray-400">Rate of change for core skills in jobs highly exposed to AI, more than double the rate from one year prior.</p>
+                                </div>
+                                <div class="stat-card p-4 rounded-lg">
+                                    <p class="text-xl font-bold text-white">56% Wage Premium</p>
+                                    <p class="text-sm text-gray-400">Commanded by workers with specialized AI skills, up from 25% last year.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-lg text-white mb-4">Education's Uneven Response</h4>
+                            <p class="text-gray-400 mb-4">While students are rapidly adopting AI tools for their studies (92% of undergraduates), formal institutional support lags significantly behind.</p>
+                             <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start"><svg class="w-5 h-5 mr-3 text-yellow-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.21 3.001-1.742 3.001H4.42c-1.532 0-2.492-1.667-1.742-3.001l5.58-9.92zM10 13a1 1 0 110-2 1 1 0 010 2zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg><span>Over <strong class="text-white">50%</strong> of K-12 teachers report their schools have no formal policy on AI use.</span></li>
+                                <li class="flex items-start"><svg class="w-5 h-5 mr-3 text-yellow-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.21 3.001-1.742 3.001H4.42c-1.532 0-2.492-1.667-1.742-3.001l5.58-9.92zM10 13a1 1 0 110-2 1 1 0 010 2zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg><span><strong class="text-white">56%</strong> of K-12 teachers have received no formal training on using AI tools.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 15: Governance, Risk, and Trust -->
+                <div class="bg-slate-900/50 p-8 rounded-lg border border-slate-800">
+                    <h3 class="text-2xl font-bold text-orange-300 mb-2">Chapter 15: Governance, Risk, and Trust</h3>
+                    <p class="text-gray-400 mb-8">As AI becomes more integrated into society, governance and risk management are moving to the forefront. Regulatory activity is accelerating globally, while public opinion shows a stark East-West divide. In the workplace, abstract fears are giving way to practical concerns about data security and accuracy.</p>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-lg text-white mb-4">The Global Regulatory Acceleration</h4>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start"><svg class="w-5 h-5 mr-3 text-orange-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M4.25 2A2.25 2.25 0 002 4.25v11.5A2.25 2.25 0 004.25 18h11.5A2.25 2.25 0 0018 15.75V4.25A2.25 2.25 0 0015.75 2H4.25zM10 6a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 6zm0 4a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 10z"></path></svg><span>Legislative mentions of AI increased <strong class="text-white">ninefold</strong> since 2016 across 75 countries.</span></li>
+                                <li class="flex items-start"><svg class="w-5 h-5 mr-3 text-orange-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M4.25 2A2.25 2.25 0 002 4.25v11.5A2.25 2.25 0 004.25 18h11.5A2.25 2.25 0 0018 15.75V4.25A2.25 2.25 0 0015.75 2H4.25zM10 6a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 6zm0 4a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 10z"></path></svg><span>US federal agencies introduced <strong class="text-white">59 new AI regulations</strong> in 2024, more than double the previous year.</span></li>
+                                <li class="flex items-start"><svg class="w-5 h-5 mr-3 text-orange-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M4.25 2A2.25 2.25 0 002 4.25v11.5A2.25 2.25 0 004.25 18h11.5A2.25 2.25 0 0018 15.75V4.25A2.25 2.25 0 0015.75 2H4.25zM10 6a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 6zm0 4a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 10z"></path></svg><span><strong class="text-white">24 US states</strong> have passed regulations targeting deepfakes in elections.</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white mb-4">Public Sentiment & Workplace Risks</h4>
+                            <p class="text-gray-400 mb-4">While large majorities in Eastern nations like China (83%) view AI as beneficial, skepticism persists in Western nations like the U.S. (39%). Employee concerns are focused on practical risks.</p>
+                            <ul class="space-y-2 text-gray-300">
+                                <li><strong class="text-white">51%:</strong> Cybersecurity risks</li>
+                                <li><strong class="text-white">50%:</strong> Factual inaccuracies</li>
+                                <li><strong class="text-white">43%:</strong> Data privacy threats</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-slate-800 mt-12 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center text-gray-500">
+            <p>&copy; 2025 AI Global Report. All Rights Reserved.</p>
+            <p class="text-xs mt-2">This document is a visual interpretation of "The State of AI: H1 2025" summary. Data is sourced from the provided document.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

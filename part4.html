@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The State of AI: H1 2025 Report - Part IV Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide-react@0.292.0/dist/lucide-react.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0e1a;
+            color: #e0e0e0;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #22d3ee, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .section-title-border {
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        .section-title-border::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #22d3ee, #3b82f6);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Title -->
+    <header class="py-8 md:py-12 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-sm font-semibold uppercase tracking-widest text-cyan-400">The AI Global Report</h2>
+            <h1 class="text-4xl md:text-6xl font-extrabold mt-2 text-white">Part IV: Sector-Specific Deep Dives</h1>
+            <p class="text-xl md:text-2xl mt-4 gradient-text font-medium">A Detailed Analysis of H1 2025</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 pb-16">
+        
+        <!-- Part IV: Sector-Specific Deep Dives -->
+        <section id="sectors" class="mb-16">
+            <div class="space-y-12">
+                <!-- Chapter 8: Financial Services -->
+                <div class="bg-slate-900/50 p-8 rounded-lg border border-slate-800">
+                    <h3 class="text-2xl font-bold text-emerald-300 mb-2">Chapter 8: Financial Services</h3>
+                    <p class="text-gray-400 mb-8">The financial services sector is rapidly adopting AI, moving from exploration to active implementation. In 2024, 58% of financial organizations were actively using AI, up from 37% in 2023. This adoption is yielding tangible results, with 88% of firms reporting revenue growth attributable to AI.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="stat-card p-6 rounded-lg">
+                            <h4 class="font-semibold text-white mb-2">Market Size & Growth</h4>
+                            <p class="text-3xl font-bold text-emerald-400">~$1.95B</p>
+                            <p class="text-sm text-gray-400">Valuation in 2025</p>
+                            <p class="mt-4 text-2xl font-bold text-white">26.29%</p>
+                            <p class="text-sm text-gray-400">Projected CAGR to 2034</p>
+                        </div>
+                        <div class="stat-card p-6 rounded-lg">
+                            <h4 class="font-semibold text-white mb-2">Adoption & Use Cases</h4>
+                            <p class="text-3xl font-bold text-emerald-400">58%</p>
+                            <p class="text-sm text-gray-400">of financial orgs using AI</p>
+                             <ul class="text-sm space-y-1 mt-4 text-gray-300">
+                                <li><strong>64%:</strong> Fraud Detection</li>
+                                <li><strong>57%:</strong> Algorithmic Trading</li>
+                                <li><strong>52%:</strong> Back-Office Automation</li>
+                            </ul>
+                        </div>
+                        <div class="stat-card p-6 rounded-lg">
+                            <h4 class="font-semibold text-white mb-2">Tangible Impact</h4>
+                            <p class="text-3xl font-bold text-emerald-400">88%</p>
+                            <p class="text-sm text-gray-400">of firms report tangible revenue growth</p>
+                            <p class="mt-4 text-2xl font-bold text-white">34%</p>
+                            <p class="text-sm text-gray-400">of those firms report growth >20%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 9: Healthcare & Life Sciences -->
+                <div class="bg-slate-900/50 p-8 rounded-lg border border-slate-800">
+                    <h3 class="text-2xl font-bold text-indigo-300 mb-2">Chapter 9: Healthcare & Life Sciences</h3>
+                    <p class="text-gray-400 mb-8">AI is having a transformative impact on healthcare, particularly in R&D, where it promises to drastically reduce the time and cost of drug discovery. This potential has attracted significant venture capital, with AI-enabled healthcare startups capturing 62% of all digital health funding in H1 2025.</p>
+                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="stat-card p-6 rounded-lg">
+                            <h4 class="font-semibold text-white mb-2">Market Size & Growth</h4>
+                            <p class="text-3xl font-bold text-indigo-400">$6.93B</p>
+                            <p class="text-sm text-gray-400">AI in Drug Discovery (2025)</p>
+                            <p class="mt-4 text-2xl font-bold text-white">$16.49B</p>
+                            <p class="text-sm text-gray-400">AI in Pharma by 2034</p>
+                        </div>
+                        <div class="stat-card p-6 rounded-lg">
+                            <h4 class="font-semibold text-white mb-2">Transformative R&D Impact</h4>
+                             <ul class="text-sm space-y-2 mt-4 text-gray-300">
+                                <li><strong class="text-white">30%</strong> of new drugs discovered using AI by end of 2025</li>
+                                <li><strong class="text-white">40%</strong> reduction in time to preclinical stage</li>
+                                <li><strong class="text-white">30%</strong> cut in associated R&D costs</li>
+                            </ul>
+                        </div>
+                        <div class="stat-card p-6 rounded-lg">
+                            <h4 class="font-semibold text-white mb-2">Clinical Adoption & Investment</h4>
+                            <p class="text-3xl font-bold text-indigo-400">$3.95B</p>
+                            <p class="text-sm text-gray-400">VC funding in H1 2025</p>
+                            <p class="mt-4 text-2xl font-bold text-white">70%</p>
+                            <p class="text-sm text-gray-400">of healthcare orgs have implemented or are pursuing GenAI</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 10 & 11: Professional Services & Media -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-slate-900/50 p-8 rounded-lg border border-slate-800">
+                        <h3 class="text-2xl font-bold text-rose-300 mb-2">Chapter 10: Professional Services</h3>
+                        <p class="text-gray-400 mb-8">Generative AI is rapidly becoming a standard tool in professional services, with approximately half of all professionals in legal and tax & accounting now using it in their daily work. This reflects a significant shift from individual experimentation to firm-wide adoption.</p>
+                        <div class="stat-card p-6 rounded-lg text-center">
+                            <h4 class="font-semibold text-white mb-2">Shift to Paid, Enterprise Tools</h4>
+                            <p class="text-5xl font-bold text-rose-400">70%</p>
+                            <p class="text-gray-300 mt-2">of professionals using AI report their firms now provide access to paid tools.</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900/50 p-8 rounded-lg border border-slate-800">
+                        <h3 class="text-2xl font-bold text-amber-300 mb-2">Chapter 11: Media, Entertainment & Gaming</h3>
+                        <p class="text-gray-400 mb-8">The market size for AI in media and gaming shows a wide discrepancy in projections, indicating a volatile but high-growth area. The gaming AI chip segment alone is expected to reach $3.9 billion in 2025, highlighting the importance of specialized hardware.</p>
+                        <div class="stat-card p-6 rounded-lg text-center">
+                            <h4 class="font-semibold text-white mb-2">Generative AI in Gaming Market</h4>
+                            <p class="text-5xl font-bold text-amber-400">$477.7M</p>
+                            <p class="text-gray-300 mt-2">Valuation in 2022, indicating a nascent but rapidly expanding segment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-slate-800 mt-12 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center text-gray-500">
+            <p>&copy; 2025 AI Global Report. All Rights Reserved.</p>
+            <p class="text-xs mt-2">This document is a visual interpretation of "The State of AI: H1 2025" summary. Data is sourced from the provided document.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
