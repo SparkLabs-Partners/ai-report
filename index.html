@@ -3,710 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The State of AI: H1 2025 - The AI Global Report v7</title>
+    <title>The State of AI: H1 2025 Report</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide-react@0.292.0/dist/lucide-react.js"></script>
     <style>
         body {
-            font-family: 'Exo 2', sans-serif;
-            background-color: #000000;
-            color: #e2e8f0;
-            background-image:
-                radial-gradient(ellipse at 20% 20%, rgba(29, 78, 216, 0.15), transparent 50%),
-                radial-gradient(ellipse at 80% 70%, rgba(107, 33, 168, 0.15), transparent 50%);
-            background-attachment: fixed;
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0e1a;
+            color: #e0e0e0;
         }
         .gradient-text {
-            background: linear-gradient(90deg, #38bdf8, #818cf8, #f472b6);
+            background: linear-gradient(90deg, #38bdf8, #a78bfa, #f472b6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .card {
-            background-color: rgba(15, 23, 42, 0.5);
-            border: 1px solid #1e293b;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            border-radius: 0.75rem;
+        .stat-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
         }
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
-            border-color: #3b82f6;
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
         }
-        .stat-value {
-            font-weight: 800;
-            font-size: 3rem;
-            line-height: 1;
-            color: #f0f9ff;
+        .chart-bar {
+            transition: width 1.5s ease-in-out;
         }
-        .section-title {
-            font-weight: 800;
-            font-size: 3.5rem;
-            letter-spacing: -0.05em;
+        @keyframes grow {
+            from { width: 0%; }
         }
-        #hero-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            opacity: 0.25;
+        .animate-grow {
+            animation: grow 1.5s ease-in-out forwards;
         }
-        .nav-link {
+        .section-title-border {
             position: relative;
-            transition: color 0.3s ease;
-            font-weight: 500;
-            letter-spacing: 0.025em;
+            padding-bottom: 0.5rem;
         }
-        .nav-link::after {
+        .section-title-border::after {
             content: '';
             position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -6px;
+            bottom: 0;
             left: 0;
-            background-color: #3b82f6;
-            transition: width 0.3s ease;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #38bdf8, #a78bfa);
         }
-        .nav-link:hover::after {
-            width: 100%;
+        .nav-link {
+            transition: color 0.3s ease;
         }
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .toc-link.active {
+        .nav-link:hover {
             color: #38bdf8;
-            transform: scale(1.05);
-        }
-        .chart-container {
-            position: relative;
-            height: 400px;
-            width: 100%;
         }
     </style>
 </head>
 <body class="antialiased">
-    <div id="root" class="relative overflow-x-hidden">
-        <!-- Header -->
-        <header class="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-xl border-b border-slate-800">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between h-20">
-                    <div class="flex-shrink-0">
-                         <img src="https://storage.googleapis.com/gemini-prod-us-central1-838955515075/images/191b4028-567a-436d-862d-045a16d56d1b.png" alt="SparkLabs Logo" class="h-10 invert brightness-0" onerror="this.onerror=null; this.src='https://placehold.co/200x40/ffffff/000000?text=SparkLabs';">
-                    </div>
-                    <nav class="hidden lg:flex items-center space-x-10">
-                        <a href="#economy" class="nav-link text-slate-300 hover:text-white">Economy</a>
-                        <a href="#geopolitics" class="nav-link text-slate-300 hover:text-white">Geopolitics</a>
-                        <a href="#enterprise" class="nav-link text-slate-300 hover:text-white">Enterprise</a>
-                        <a href="#sectors" class="nav-link text-slate-300 hover:text-white">Sectors</a>
-                        <a href="#tech" class="nav-link text-slate-300 hover:text-white">Technology</a>
-                        <a href="#society" class="nav-link text-slate-300 hover:text-white">Society</a>
-                    </nav>
-                    <a href="#" class="hidden md:inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/20">Download Full Report</a>
-                    <button id="mobile-menu-btn" class="lg:hidden text-white">
-                        <i data-lucide="menu"></i>
-                    </button>
+
+    <!-- Header & Title -->
+    <header class="py-8 md:py-12 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-sm font-semibold uppercase tracking-widest text-sky-400">The AI Global Report</h2>
+            <h1 class="text-4xl md:text-6xl font-extrabold mt-2 text-white">The State of AI: H1 2025</h1>
+            <p class="text-xl md:text-2xl mt-4 gradient-text font-medium">From Hype to Harbinger</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 pb-16">
+        
+        <!-- Key Metrics Section -->
+        <section id="key-metrics" class="mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="stat-card rounded-xl p-6">
+                    <h3 class="text-4xl font-bold text-white">$165B</h3>
+                    <p class="text-gray-400 mt-2">Captured by AI startups in H1 2025 VC funding.</p>
+                </div>
+                <div class="stat-card rounded-xl p-6">
+                    <h3 class="text-4xl font-bold text-white">72%</h3>
+                    <p class="text-gray-400 mt-2">of companies report using AI to some degree in early 2025.</p>
+                </div>
+                <div class="stat-card rounded-xl p-6">
+                    <h3 class="text-4xl font-bold text-white">+56%</h3>
+                    <p class="text-gray-400 mt-2">Wage premium for workers with specialized AI skills.</p>
+                </div>
+                <div class="stat-card rounded-xl p-6">
+                    <h3 class="text-4xl font-bold text-white">12x</h3>
+                    <p class="text-gray-400 mt-2">U.S. private AI investment was nearly 12 times greater than China's in 2024.</p>
                 </div>
             </div>
-        </header>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden fixed inset-0 bg-black/95 z-40 lg:hidden">
-            <div class="flex flex-col items-center justify-center h-full space-y-8">
-                <a href="#economy" class="mobile-nav-link text-2xl text-slate-300 hover:text-white">Economy</a>
-                <a href="#geopolitics" class="mobile-nav-link text-2xl text-slate-300 hover:text-white">Geopolitics</a>
-                <a href="#enterprise" class="mobile-nav-link text-2xl text-slate-300 hover:text-white">Enterprise</a>
-                <a href="#sectors" class="mobile-nav-link text-2xl text-slate-300 hover:text-white">Sectors</a>
-                <a href="#tech" class="mobile-nav-link text-2xl text-slate-300 hover:text-white">Technology</a>
-                <a href="#society" class="mobile-nav-link text-2xl text-slate-300 hover:text-white">Society</a>
-                <a href="#" class="mt-8 bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-500 transition-colors">Download Full Report</a>
-            </div>
-        </div>
+        </section>
 
-        <div class="flex">
-            <!-- Sticky Table of Contents -->
-            <aside class="hidden xl:block w-64 sticky top-20 h-screen p-8 pr-4">
-                <nav id="toc" class="space-y-4 text-slate-400">
-                    <!-- TOC links will be injected here by JS -->
-                </nav>
-            </aside>
-
-            <div class="flex-1">
-                <!-- Hero Section -->
-                <section class="relative min-h-screen flex items-center justify-center text-center py-24 px-4 overflow-hidden">
-                    <canvas id="hero-canvas"></canvas>
-                    <div class="relative z-10">
-                        <h1 class="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-4">The State of <span class="gradient-text">AI</span></h1>
-                        <p class="text-2xl md:text-3xl text-slate-400 mb-12 max-w-5xl mx-auto font-light">H1 2025 Report: From Hype to Harbinger</p>
+        <!-- Part I: The Global AI Economy -->
+        <section id="economy" class="mb-16">
+            <h2 class="text-3xl font-bold text-white section-title-border mb-8">Part I: The Global AI Economy</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- VC Funding -->
+                <div class="bg-slate-900/50 p-6 rounded-lg border border-slate-800">
+                    <h3 class="text-xl font-semibold text-sky-300 mb-4">The Venture Capital Barbell</h3>
+                    <p class="text-gray-400 mb-6">The market shows extreme concentration in mega-deals for foundation models, while seed-stage AI investment flourishes, squeezing the middle.</p>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-300">AI's Share of Global VC (H1 2025)</span>
+                                <span class="text-sm font-medium text-white">53%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                <div class="bg-sky-400 h-2.5 rounded-full animate-grow" style="width: 53%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-300">AI's Share of US VC (H1 2025)</span>
+                                <span class="text-sm font-medium text-white">64%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                <div class="bg-teal-400 h-2.5 rounded-full animate-grow" style="width: 64%;"></div>
+                            </div>
+                        </div>
                     </div>
-                </section>
+                    <p class="text-xs text-gray-500 mt-6">A single $40B OpenAI deal significantly inflated Q1 2025 totals.</p>
+                </div>
 
-                <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-32">
-                    <!-- Part I: The Global AI Economy -->
-                    <section id="economy" class="fade-in-section space-y-16">
-                        <div class="text-center">
-                            <p class="text-blue-400 font-semibold">Part I</p>
-                            <h2 class="section-title">The Global AI Economy</h2>
-                        </div>
-
-                        <div class="card p-8">
-                            <h3 class="text-3xl font-bold mb-4 flex items-center"><i data-lucide="dollar-sign" class="mr-3 text-blue-400"></i>Overall Funding (H1 2025)</h3>
-                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
-                                <div class="p-6 bg-slate-900/50 rounded-lg">
-                                    <p class="text-slate-400 text-lg">Total Global VC Funding</p>
-                                    <p class="stat-value">$310B</p>
-                                </div>
-                                <div class="p-6 bg-slate-900/50 rounded-lg">
-                                    <p class="text-slate-400 text-lg">AI-Focused Startup Share</p>
-                                    <p class="stat-value">$165B <span class="text-2xl text-slate-400">(53%)</span></p>
-                                </div>
-                                <div class="p-6 bg-slate-900/50 rounded-lg">
-                                    <p class="text-slate-400 text-lg">AI Share of US Venture Dollars</p>
-                                    <p class="stat-value">64%</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card p-8">
-                            <h3 class="text-3xl font-bold mb-4 flex items-center"><i data-lucide="bar-chart-3" class="mr-3 text-blue-400"></i>The Venture Capital Barbell</h3>
-                            <p class="text-slate-400 max-w-4xl text-lg mb-6">The market is defined by a stark contrast: a handful of colossal mega-deals at one end, a booming ecosystem of seed-stage funds at the other, and a contracting middle ground.</p>
-                            <div class="grid lg:grid-cols-3 gap-8">
-                                <div class="p-6 border border-slate-700 rounded-lg">
-                                    <h4 class="text-xl font-bold mb-2 flex items-center"><i data-lucide="gem" class="mr-2 text-blue-300"></i>The Heavy End: Mega-Deals</h4>
-                                    <ul class="text-slate-400 space-y-2">
-                                        <li><span class="font-bold text-white">OpenAI:</span> $40B (SoftBank-led)</li>
-                                        <li><span class="font-bold text-white">Scale AI:</span> $14.3B (Meta-led)</li>
-                                        <li><span class="font-bold text-white">xAI:</span> $10B</li>
-                                        <li><span class="font-bold text-white">Anthropic:</span> $3.5B</li>
-                                        <li><span class="font-bold text-white">Safe Superintelligence:</span> $2B</li>
-                                        <li><span class="font-bold text-white">Thinking Machines Lab:</span> $2B (Seed)</li>
-                                        <li class="pt-2 mt-2 border-t border-slate-700"><span class="font-bold text-white">Avg. Late-Stage Deal:</span> $270M</li>
-                                    </ul>
-                                </div>
-                                <div class="p-6 border border-slate-700 rounded-lg">
-                                    <h4 class="text-xl font-bold mb-2 flex items-center"><i data-lucide="minimize-2" class="mr-2 text-orange-400"></i>The Squeezed Middle</h4>
-                                    <p class="text-slate-400">Individual VC-backed AI deals fell to a 5-year low of 2,101 in Q1 2025, down from 3,022 in Q1 2022. Indian deal volumes are 40-50% below their 2021 peak.</p>
-                                </div>
-                                <div class="p-6 border border-slate-700 rounded-lg">
-                                    <h4 class="text-xl font-bold mb-2 flex items-center"><i data-lucide="sprout" class="mr-2 text-green-400"></i>The Light End: Seed-Stage</h4>
-                                    <p class="text-slate-400">24.5% of new VC funds are AI-dedicated (vs. 5.4% in 2022). YC's W25 batch was 82% AI-related. Avg. AI seed deal is $8.3M vs $6.1M for non-AI.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card p-8">
-                            <h3 class="text-3xl font-bold mb-4 flex items-center"><i data-lucide="building" class="mr-3 text-blue-400"></i>Corporate & PE Strategy</h3>
-                             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <div class="p-4">
-                                    <p class="text-slate-400">CVC/Corporate Share of Deal Value</p>
-                                    <p class="stat-value">47%</p>
-                                    <p class="text-slate-500">A four-year high in Q1 2025</p>
-                                </div>
-                                <div class="p-4">
-                                    <p class="text-slate-400">Leaders Planning M&A for AI</p>
-                                    <p class="stat-value">64%</p>
-                                    <p class="text-slate-500">Within the next 12 months</p>
-                                </div>
-                                <div class="p-4">
-                                    <p class="text-slate-400">PE Firms Multiplying AI Investment</p>
-                                    <p class="stat-value">95%</p>
-                                    <p class="text-slate-500">Within the next 18 months</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card p-8">
-                            <h3 class="text-3xl font-bold mb-4 flex items-center"><i data-lucide="trending-up" class="mr-3 text-blue-400"></i>Market Projections & Economic Impact</h3>
-                            <div class="grid lg:grid-cols-2 gap-8">
-                                <div class="chart-container"><canvas id="marketGrowthChart"></canvas></div>
-                                <div class="chart-container"><canvas id="valueDistributionChart"></canvas></div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Part II: The Geopolitical Arena -->
-                    <section id="geopolitics" class="fade-in-section space-y-16">
-                        <div class="text-center">
-                            <p class="text-green-400 font-semibold">Part II</p>
-                            <h2 class="section-title">The Geopolitical Arena</h2>
-                        </div>
-                        <div class="card p-8">
-                             <h3 class="text-3xl font-bold mb-4 flex items-center"><i data-lucide="swords" class="mr-3 text-green-400"></i>The Superpower Duality: US vs. China</h3>
-                             <div class="grid lg:grid-cols-2 gap-8 items-center">
-                                 <div class="chart-container"><canvas id="investmentChart"></canvas></div>
-                                 <div>
-                                     <h4 class="text-2xl font-bold mb-3">The Closing Capability Gap</h4>
-                                     <p class="text-slate-400 mb-4">While the US leads in private investment, China is rapidly closing the performance gap on key technical benchmarks.</p>
-                                     <div class="space-y-4">
-                                         <div>
-                                             <p class="font-semibold text-white">MMLU Benchmark Lead (US vs China)</p>
-                                             <p class="text-slate-400">Fell from <span class="font-bold text-white">17.5%</span> to just <span class="font-bold text-white">0.3%</span> in 2024</p>
-                                         </div>
-                                         <div>
-                                             <p class="font-semibold text-white">HumanEval Coding Benchmark Lead</p>
-                                             <p class="text-slate-400">Narrowed from <span class="font-bold text-white">31.6%</span> to a mere <span class="font-bold text-white">3.7%</span> in 2024</p>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                        </div>
-                        <div class="card p-8">
-                            <h3 class="text-3xl font-bold mb-4 flex items-center"><i data-lucide="globe-2" class="mr-3 text-green-400"></i>The Emerging Multi-Polar AI World</h3>
-                            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                <div class="p-6 bg-slate-900/50 rounded-lg">
-                                    <h4 class="text-xl font-bold mb-2">European Union</h4>
-                                    <p class="text-slate-400">"InvestAI" program aims for <span class="font-bold text-white">€200B</span> in innovation, with <span class="font-bold text-white">€20B</span> for "AI gigafactories".</p>
-                                </div>
-                                <div class="p-6 bg-slate-900/50 rounded-lg">
-                                    <h4 class="text-xl font-bold mb-2">India</h4>
-                                    <p class="text-slate-400">"IndiaAI" initiative with <span class="font-bold text-white">$1.25B+</span> government funding. Microsoft investing <span class="font-bold text-white">$3B</span>.</p>
-                                </div>
-                                <div class="p-6 bg-slate-900/50 rounded-lg">
-                                    <h4 class="text-xl font-bold mb-2">United Kingdom</h4>
-                                    <p class="text-slate-400">Private AI investment reached <span class="font-bold text-white">$4.5B</span> in 2024.</p>
-                                </div>
-                                <div class="p-6 bg-slate-900/50 rounded-lg">
-                                    <h4 class="text-xl font-bold mb-2">Singapore</h4>
-                                    <p class="text-slate-400">National AI Strategy 2.0 aims to triple core AI talent pool to <span class="font-bold text-white">15,000</span>.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Part III: The Enterprise Frontline -->
-                    <section id="enterprise" class="fade-in-section space-y-16">
-                        <div class="text-center">
-                            <p class="text-pink-400 font-semibold">Part III</p>
-                            <h2 class="section-title">The Enterprise Frontline</h2>
-                        </div>
-                        <div class="card p-8">
-                            <h3 class="text-3xl font-bold mb-4 flex items-center"><i data-lucide="waypoints" class="mr-3 text-pink-400"></i>Adoption-Maturity Gap</h3>
-                            <div class="grid lg:grid-cols-2 gap-8 items-center">
-                                <div class="chart-container"><canvas id="adoptionMaturityChart"></canvas></div>
-                                <div class="text-slate-300 space-y-4">
-                                    <p class="text-lg">While adoption is high, true integration and value realization remain elusive for most.</p>
-                                    <p><span class="stat-value text-4xl mr-2">74%</span> of companies who have adopted AI report struggling to reap its full benefits.</p>
-                                    <p><span class="stat-value text-4xl mr-2">65%</span> specifically use generative AI tools.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid lg:grid-cols-2 gap-8">
-                            <div class="card p-8">
-                                <h3 class="text-3xl font-bold mb-4 flex items-center"><i data-lucide="spy" class="mr-3 text-pink-400"></i>The Governance Deficit</h3>
-                                <p class="text-slate-400 mb-4">A lack of clear strategy creates friction and isolated development.</p>
-                                <ul class="space-y-3 text-lg">
-                                    <li><span class="font-bold text-white">25%</span> have a C-suite-approved GenAI roadmap.</li>
-                                    <li><span class="font-bold text-white">80%</span> success rate with a strategy vs. 37% without.</li>
-                                    <li><span class="font-bold text-white">60%</span> have appointed a Chief AI Officer (CAIO).</li>
-                                    <li><span class="font-bold text-white">72%</span> see AI apps developed in isolated silos.</li>
-                                </ul>
-                            </div>
-                            <div class="card p-8">
-                                <h3 class="text-3xl font-bold mb-4 flex items-center"><i data-lucide="coins" class="mr-3 text-pink-400"></i>The ROI Conundrum</h3>
-                                <p class="text-slate-400 mb-4">Productivity gains are clear, but direct financial returns are harder to prove.</p>
-                                <ul class="space-y-3 text-lg">
-                                    <li><span class="font-bold text-white">10x</span> rise in software engineer output.</li>
-                                    <li><span class="font-bold text-white">19%</span> of execs report >5% revenue increase from AI.</li>
-                                    <li><span class="font-bold text-white">10%</span> median ROI from AI initiatives (BCG).</li>
-                                    <li><span class="font-bold text-white">$3.50</span> value for every $1 spent on AI (IDC).</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Part IV: Sector-Specific Deep Dives -->
-                    <section id="sectors" class="fade-in-section space-y-16">
-                        <div class="text-center">
-                            <p class="text-yellow-400 font-semibold">Part IV</p>
-                            <h2 class="section-title">Sector-Specific Deep Dives</h2>
-                        </div>
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div class="card p-8">
-                                <h3 class="text-3xl font-bold mb-4 flex items-center"><i data-lucide="landmark" class="mr-3 text-yellow-400"></i>Financial Services</h3>
-                                <p class="text-slate-400 mb-4">Market projected to grow from <span class="font-bold text-white">$1.95B</span> (2025) to <span class="font-bold text-white">$15.69B</span> (2034).</p>
-                                <ul class="space-y-2 text-slate-300">
-                                    <li><span class="font-bold">Adoption:</span> 58% of firms use AI (up from 37% in 2023).</li>
-                                    <li><span class="font-bold">Impact:</span> 88% report tangible revenue growth.</li>
-                                    <li><span class="font-bold">Use Cases:</span> Fraud Detection (64%), Algorithmic Trading (57%).</li>
-                                </ul>
-                            </div>
-                            <div class="card p-8">
-                                <h3 class="text-3xl font-bold mb-4 flex items-center"><i data-lucide="heart-pulse" class="mr-3 text-yellow-400"></i>Healthcare & Life Sciences</h3>
-                                <p class="text-slate-400 mb-4">AI in drug discovery market estimated at <span class="font-bold text-white">$6.93B</span> in 2025.</p>
-                                <ul class="space-y-2 text-slate-300">
-                                    <li><span class="font-bold">R&D Impact:</span> 30% of new drugs in 2025 will be AI-discovered.</li>
-                                    <li><span class="font-bold">Savings:</span> R&D costs cut by 30%, time to preclinical by 40%.</li>
-                                    <li><span class="font-bold">Investment:</span> AI startups took 62% of digital health VC funding in H1 2025 ($3.95B).</li>
-                                </ul>
-                            </div>
-                            <div class="card p-8">
-                                <h3 class="text-3xl font-bold mb-4 flex items-center"><i data-lucide="briefcase" class="mr-3 text-yellow-400"></i>Professional Services</h3>
-                                <p class="text-slate-400 mb-4">Widespread daily use is becoming the norm.</p>
-                                <ul class="space-y-2 text-slate-300">
-                                    <li><span class="font-bold">Usage:</span> ~50% of legal and tax/accounting pros use GenAI daily.</li>
-                                    <li><span class="font-bold">Enterprise Shift:</span> 70% of these pros are now using paid tools provided by their firms.</li>
-                                </ul>
-                            </div>
-                            <div class="card p-8">
-                                <h3 class="text-3xl font-bold mb-4 flex items-center"><i data-lucide="gamepad-2" class="mr-3 text-yellow-400"></i>Media, Entertainment & Gaming</h3>
-                                <p class="text-slate-400 mb-4">Market size projections vary wildly, but key segments show strong growth.</p>
-                                <ul class="space-y-2 text-slate-300">
-                                    <li><span class="font-bold">GenAI in Gaming Market:</span> Valued at $477.7M in 2022.</li>
-                                    <li><span class="font-bold">Gaming AI Chip Segment:</span> Expected to reach $3.9B in 2025.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Part V: The Technology Frontier -->
-                    <section id="tech" class="fade-in-section space-y-16">
-                        <div class="text-center">
-                            <p class="text-cyan-400 font-semibold">Part V</p>
-                            <h2 class="section-title">The Technology Frontier</h2>
-                        </div>
-                        <div class="card p-8">
-                            <h3 class="text-3xl font-bold mb-4 flex items-center"><i data-lucide="brain-circuit" class="mr-3 text-cyan-400"></i>The Model Arms Race</h3>
-                            <div class="grid lg:grid-cols-2 gap-8">
-                                <div>
-                                    <h4 class="text-2xl font-bold mb-3">The Converging Frontier</h4>
-                                    <p class="text-slate-400 mb-4">The performance gap between top models is shrinking, and open models are catching up to closed ones.</p>
-                                    <div class="chart-container" style="height: 300px;"><canvas id="eloScoreChart"></canvas></div>
-                                </div>
-                                <div>
-                                    <h4 class="text-2xl font-bold mb-3">The Efficiency Paradigm</h4>
-                                    <p class="text-slate-400 mb-4">Smaller, cheaper models are achieving performance that once required massive scale.</p>
-                                    <ul class="space-y-3 text-lg">
-                                        <li><span class="font-bold text-white">142x</span> model size reduction for high MMLU performance (2022-2024).</li>
-                                        <li><span class="font-bold text-white">Pricing:</span> Gemini 2.5 Flash is 63% cheaper than GPT-4.1 mini.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card p-8">
-                            <h3 class="text-3xl font-bold mb-4 flex items-center"><i data-lucide="cpu" class="mr-3 text-cyan-400"></i>The Hardware Backbone & Energy Imperative</h3>
-                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <div class="p-6 bg-slate-900/50 rounded-lg">
-                                    <h4 class="text-xl font-bold mb-2">Hyperscaler Capex</h4>
-                                    <p class="stat-value text-4xl">$220B+</p>
-                                    <p class="text-slate-400">Estimated for 2025</p>
-                                </div>
-                                <div class="p-6 bg-slate-900/50 rounded-lg">
-                                    <h4 class="text-xl font-bold mb-2">Data Center Power Demand</h4>
-                                    <p class="stat-value text-4xl">1,000 TWh</p>
-                                    <p class="text-slate-400">Projected by 2030</p>
-                                </div>
-                                <div class="p-6 bg-slate-900/50 rounded-lg">
-                                    <h4 class="text-xl font-bold mb-2">Next-Gen GPU Power</h4>
-                                    <p class="stat-value text-4xl">1,200 W</p>
-                                    <p class="text-slate-400">Up from 400W in 2022</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Part VI: The Human and Societal Dimension -->
-                    <section id="society" class="fade-in-section space-y-16">
-                        <div class="text-center">
-                            <p class="text-purple-400 font-semibold">Part VI</p>
-                            <h2 class="section-title">The Human & Societal Dimension</h2>
-                        </div>
-                        <div class="grid lg:grid-cols-2 gap-8">
-                             <div class="card p-8">
-                                <h3 class="text-3xl font-bold mb-4 flex items-center"><i data-lucide="briefcase" class="mr-3 text-purple-400"></i>The Future of Work & Education</h3>
-                                <p class="text-slate-400 mb-4">AI is accelerating the pace of change for job skills and creating a significant wage premium.</p>
-                                <ul class="space-y-3 text-lg">
-                                    <li><span class="font-bold text-white">66%</span> faster change in core skills for AI-exposed jobs.</li>
-                                    <li><span class="font-bold text-white">56%</span> wage premium for AI-skilled workers (up from 25%).</li>
-                                    <li><span class="font-bold text-white">92%</span> of undergrads use GenAI for studies.</li>
-                                    <li><span class="font-bold text-white">56%</span> of K-12 teachers have received no AI training.</li>
-                                </ul>
-                            </div>
-                            <div class="card p-8">
-                                <h3 class="text-3xl font-bold mb-4 flex items-center"><i data-lucide="scale" class="mr-3 text-purple-400"></i>Governance, Risk & Trust</h3>
-                                <p class="text-slate-400 mb-4">Regulatory activity is accelerating globally, while public sentiment varies and employee concerns shift to practical risks.</p>
-                                <ul class="space-y-3 text-lg">
-                                    <li><span class="font-bold text-white">9x</span> increase in legislative mentions of AI since 2016.</li>
-                                    <li><span class="font-bold text-white">24</span> US states regulate AI deepfakes in elections.</li>
-                                    <li><span class="font-bold text-white">Top Risk:</span> Cybersecurity (51% of employees).</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-                </main>
+                <!-- Corporate & PE Strategy -->
+                <div class="bg-slate-900/50 p-6 rounded-lg border border-slate-800">
+                    <h3 class="text-xl font-semibold text-fuchsia-300 mb-4">Corporate & PE Strategy</h3>
+                    <p class="text-gray-400 mb-6">Corporations and Private Equity are aggressively pursuing AI capabilities through direct investment and M&A.</p>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 mr-3 text-fuchsia-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <span><strong class="text-white">47% of deal value</strong> from CVCs & direct corporate investments, a 4-year high.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 mr-3 text-fuchsia-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h6m-6 4h6m-6 4h6"></path></svg>
+                            <span><strong class="text-white">64% of leaders</strong> plan to use M&A to acquire AI talent in the next 12 months.</span>
+                        </li>
+                         <li class="flex items-start">
+                            <svg class="w-5 h-5 mr-3 text-fuchsia-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            <span><strong class="text-white">95% of PE firms</strong> plan to multiply their AI investments in the next 18 months.</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </section>
+
+        <!-- Part II: The Geopolitical Arena -->
+        <section id="geopolitics" class="mb-16">
+            <h2 class="text-3xl font-bold text-white section-title-border mb-8">Part II: The Geopolitical Arena</h2>
+            <div class="bg-slate-900/50 p-6 rounded-lg border border-slate-800">
+                <h3 class="text-xl font-semibold text-amber-300 mb-4">The Superpower Duality: U.S. vs. China</h3>
+                <p class="text-gray-400 mb-6">The US maintains a commanding lead in private AI investment, while China focuses on state-backed funds and is rapidly closing the capability gap in model performance.</p>
+                
+                <div class="space-y-4">
+                    <p class="text-sm font-medium text-gray-300 mb-2">Private AI Investment (2024)</p>
+                    <!-- US Bar -->
+                    <div class="flex items-center">
+                        <span class="w-20 text-right mr-4 text-white">U.S.</span>
+                        <div class="flex-1 bg-gray-700 rounded-full h-6">
+                            <div class="bg-blue-500 h-6 rounded-full flex items-center justify-start pl-3 animate-grow" style="width: 100%;">
+                                <span class="font-bold text-white text-sm">$109.1B</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- China Bar -->
+                    <div class="flex items-center">
+                        <span class="w-20 text-right mr-4 text-white">China</span>
+                        <div class="flex-1 bg-gray-700 rounded-full h-6">
+                            <div class="bg-red-500 h-6 rounded-full flex items-center justify-start pl-3 animate-grow" style="width: 8.5%;">
+                                <span class="font-bold text-white text-sm">$9.3B</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+                    <div class="bg-slate-800 p-4 rounded-lg">
+                        <p class="text-gray-400">U.S. lead on MMLU benchmark</p>
+                        <p class="text-2xl font-bold text-white">17.5% <span class="text-base font-normal text-gray-400">to</span> 0.3%</p>
+                        <p class="text-xs text-gray-500">Gap narrowed in 2024</p>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg">
+                        <p class="text-gray-400">U.S. lead on HumanEval benchmark</p>
+                        <p class="text-2xl font-bold text-white">31.6% <span class="text-base font-normal text-gray-400">to</span> 3.7%</p>
+                        <p class="text-xs text-gray-500">Gap narrowed in 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part III: The Enterprise Frontline -->
+        <section id="enterprise" class="mb-16">
+            <h2 class="text-3xl font-bold text-white section-title-border mb-8">Part III: The Enterprise Frontline</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 bg-slate-900/50 p-6 rounded-lg border border-slate-800">
+                    <h3 class="text-xl font-semibold text-lime-300 mb-4">Adoption vs. Maturity Gap</h3>
+                    <p class="text-gray-400 mb-6">While AI usage is becoming ubiquitous in the enterprise, most companies are struggling to move beyond initial adoption to achieve strategic maturity and reap the full benefits.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="text-center p-4 bg-slate-800 rounded-lg">
+                           <p class="text-5xl font-bold gradient-text">72%</p>
+                           <p class="mt-2 text-gray-400">of companies report using AI.</p>
+                        </div>
+                        <div class="text-center p-4 bg-slate-800 rounded-lg">
+                           <p class="text-5xl font-bold gradient-text">1%</p>
+                           <p class="mt-2 text-gray-400">describe their AI deployment as "mature".</p>
+                        </div>
+                         <div class="text-center p-4 bg-slate-800 rounded-lg">
+                           <p class="text-5xl font-bold gradient-text">25%</p>
+                           <p class="mt-2 text-gray-400">have a C-suite approved AI roadmap.</p>
+                        </div>
+                         <div class="text-center p-4 bg-slate-800 rounded-lg">
+                           <p class="text-5xl font-bold gradient-text">74%</p>
+                           <p class="mt-2 text-gray-400">struggle to see full benefits from AI.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-900/50 p-6 rounded-lg border border-slate-800">
+                    <h3 class="text-xl font-semibold text-rose-300 mb-4">The ROI Conundrum</h3>
+                    <p class="text-gray-400 mb-6">Despite massive productivity gains, especially in software engineering, tangible financial returns remain elusive for many.</p>
+                    <ul class="space-y-4 text-gray-300">
+                        <li>
+                            <p class="font-bold text-white">Only 19%</p>
+                            <p class="text-sm">report revenue increases >5% attributable to AI.</p>
+                        </li>
+                        <li>
+                            <p class="font-bold text-white">Only 23%</p>
+                            <p class="text-sm">see favorable changes in overall costs.</p>
+                        </li>
+                         <li>
+                            <p class="font-bold text-white">10% Median ROI</p>
+                            <p class="text-sm">found in a recent BCG survey of AI initiatives.</p>
+                        </li>
+                        <li class="pt-4 border-t border-slate-700">
+                            <p class="font-bold text-white">87% of Execs</p>
+                            <p class="text-sm">expect significant revenue growth from GenAI within 3 years.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Part V: The Technology Frontier -->
+        <section id="technology" class="mb-16">
+            <h2 class="text-3xl font-bold text-white section-title-border mb-8">Part V: The Technology Frontier</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                 <div class="bg-slate-900/50 p-6 rounded-lg border border-slate-800">
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-4">The Converging Model Frontier</h3>
+                    <p class="text-gray-400 mb-6">The performance gap between top AI models is shrinking rapidly, and the efficiency of these models is improving at an astonishing rate.</p>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-gray-300">Gap between #1 and #10 model (Chatbot Arena Elo)</p>
+                            <p class="text-2xl font-bold text-white">11.9% <span class="text-base font-normal text-gray-400">to</span> 5.4%</p>
+                            <p class="text-xs text-gray-500">in one year</p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-700">
+                            <p class="text-gray-300">Model size for high MMLU performance</p>
+                            <p class="text-2xl font-bold text-white">142x Reduction</p>
+                            <p class="text-xs text-gray-500">From 540B params (2022) to 3.8B (2024)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-900/50 p-6 rounded-lg border border-slate-800">
+                    <h3 class="text-xl font-semibold text-violet-300 mb-4">The Hardware Backbone & Energy Imperative</h3>
+                    <p class="text-gray-400 mb-6">Massive hyperscaler investment continues, but the soaring power and water consumption of AI hardware presents a critical challenge.</p>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 mr-3 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3m6-3h-2m-4 0H9m12-4h-2m-4 0H9"></path></svg>
+                            <span><strong class="text-white">$220B+</strong> estimated hyperscaler capex on AI infra by 2025.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 mr-3 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01"></path></svg>
+                            <span><strong class="text-white">1,000+ TWh</strong> projected data center power use by 2030, a surge driven by AI.</span>
+                        </li>
+                         <li class="flex items-start">
+                             <svg class="w-5 h-5 mr-3 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M12 12v9"></path></svg>
+                            <span><strong class="text-white">700,000 Liters</strong> of fresh water consumed to train a single model like GPT-3.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-slate-800 mt-12 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center text-gray-500">
+            <p>&copy; 2025 AI Global Report. All Rights Reserved.</p>
+            <p class="text-xs mt-2">This document is a visual interpretation of "The State of AI: H1 2025 — From Hype to Harbinger" summary. Data is sourced from the provided document.</p>
         </div>
+    </footer>
 
-        <!-- Footer -->
-        <footer class="border-t border-slate-800 mt-32">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center text-slate-400">
-                <img src="https://storage.googleapis.com/gemini-prod-us-central1-838955515075/images/191b4028-567a-436d-862d-045a16d56d1b.png" alt="SparkLabs Logo" class="h-10 mx-auto mb-6 invert brightness-0" onerror="this.onerror=null; this.src='https.onerror=null; this.src='https://placehold.co/200x40/ffffff/000000?text=SparkLabs'';">
-                <p>&copy; 2025 SparkLabs. All Rights Reserved.</p>
-                <p class="text-sm mt-2">Data from The State of AI: H1 2025 — The AI Global Report v7</p>
-            </div>
-        </footer>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize Lucide icons
-            lucide.createIcons();
-
-            // Mobile Menu Toggle
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-            mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-            mobileNavLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
-
-            // Hero Canvas Animation
-            const canvas = document.getElementById('hero-canvas');
-            const ctx = canvas.getContext('2d');
-            let width, height, particles;
-            const particleCount = 150;
-            const connectDistance = 100;
-
-            function initCanvas() {
-                const heroSection = document.querySelector('.min-h-screen');
-                width = canvas.width = heroSection.offsetWidth;
-                height = canvas.height = heroSection.offsetHeight;
-                particles = Array.from({ length: particleCount }, () => new Particle());
-            }
-
-            class Particle {
-                constructor() {
-                    this.x = Math.random() * width;
-                    this.y = Math.random() * height;
-                    this.vx = (Math.random() - 0.5) * 0.4;
-                    this.vy = (Math.random() - 0.5) * 0.4;
-                    this.radius = Math.random() * 2 + 1;
-                }
-                update() {
-                    this.x += this.vx;
-                    this.y += this.vy;
-                    if (this.x < 0 || this.x > width) this.vx *= -1;
-                    if (this.y < 0 || this.y > height) this.vy *= -1;
-                }
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = 'rgba(59, 130, 246, 0.7)';
-                    ctx.fill();
-                }
-            }
-
-            function connectParticles() {
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        if (distance < connectDistance) {
-                            ctx.beginPath();
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.strokeStyle = `rgba(59, 130, 246, ${1 - distance / connectDistance})`;
-                            ctx.lineWidth = 0.5;
-                            ctx.stroke();
-                        }
-                    }
-                }
-            }
-
-            let animationFrameId;
-            function animate() {
-                ctx.clearRect(0, 0, width, height);
-                particles.forEach(p => {
-                    p.update();
-                    p.draw();
-                });
-                connectParticles();
-                animationFrameId = requestAnimationFrame(animate);
-            }
-            
-            initCanvas();
-            animate();
-            
-            let resizeTimeout;
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(() => {
-                    cancelAnimationFrame(animationFrameId);
-                    initCanvas();
-                    animate();
-                }, 250);
-            });
-
-            // Intersection Observer for fade-in sections and TOC highlighting
-            const sections = document.querySelectorAll('section');
-            const tocNav = document.getElementById('toc');
-            
-            // Generate TOC
-            sections.forEach(section => {
-                const title = section.querySelector('h2').textContent;
-                const link = document.createElement('a');
-                link.href = `#${section.id}`;
-                link.textContent = title;
-                link.className = 'block toc-link transition-all duration-300';
-                tocNav.appendChild(link);
-            });
-            const tocLinks = tocNav.querySelectorAll('a');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        
-                        // Highlight TOC link
-                        const id = entry.target.getAttribute('id');
-                        tocLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href') === `#${id}`) {
-                                link.classList.add('active');
-                            }
-                        });
-                    }
-                });
-            }, {
-                rootMargin: '-30% 0px -30% 0px',
-                threshold: 0.1
-            });
-            
-            sections.forEach(section => observer.observe(section));
-
-            // Chart.js Configuration
-            Chart.defaults.color = '#94a3b8';
-            Chart.defaults.borderColor = '#334155';
-            Chart.defaults.font.family = "'Exo 2', sans-serif";
-
-            // Market Growth Chart
-            new Chart(document.getElementById('marketGrowthChart'), {
-                type: 'bar',
-                data: {
-                    labels: ['Generative AI Market', 'Broader AI Market'],
-                    datasets: [
-                        {
-                            label: '2025 Projection',
-                            data: [37.89, 757.58],
-                            backgroundColor: 'rgba(59, 130, 246, 0.6)',
-                            borderColor: 'rgba(59, 130, 246, 1)',
-                            borderWidth: 1
-                        },
-                        {
-                            label: '2034 Forecast',
-                            data: [1005, 3680],
-                            backgroundColor: 'rgba(168, 85, 247, 0.6)',
-                            borderColor: 'rgba(168, 85, 247, 1)',
-                            borderWidth: 1
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: { display: true, text: 'AI Market Size Forecast (in Billion USD)', font: { size: 16 }, color: '#e2e8f0' },
-                        tooltip: { mode: 'index', intersect: false }
-                    },
-                    scales: { y: { beginAtZero: true, grid: { color: '#1e293b' } }, x: { grid: { display: false } } }
-                }
-            });
-
-            // Value Distribution Chart
-            new Chart(document.getElementById('valueDistributionChart'), {
-                type: 'doughnut',
-                data: {
-                    labels: ['Sales & Marketing', 'Software Engineering', 'Customer Service', 'R&D'],
-                    datasets: [{
-                        data: [28, 25, 11, 9],
-                        backgroundColor: ['#38bdf8', '#6366f1', '#a855f7', '#ec4899'],
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: { display: true, text: 'Potential Economic Value by Function', font: { size: 16 }, color: '#e2e8f0' },
-                        legend: { position: 'top' }
-                    }
-                }
-            });
-            
-            // US vs China Investment Chart
-            new Chart(document.getElementById('investmentChart'), {
-                type: 'bar',
-                data: {
-                    labels: ['Private AI Investment 2024'],
-                    datasets: [
-                        { label: 'United States', data: [109.1], backgroundColor: '#3b82f6' },
-                        { label: 'China', data: [9.3], backgroundColor: '#ef4444' }
-                    ]
-                },
-                options: {
-                    responsive: true, maintainAspectRatio: false,
-                    plugins: {
-                        title: { display: true, text: 'Private AI Investment 2024 (in Billion USD)', font: { size: 16 }, color: '#e2e8f0' }
-                    },
-                    scales: { y: { beginAtZero: true, grid: { color: '#1e293b' } }, x: { grid: { display: false } } }
-                }
-            });
-
-            // Adoption vs Maturity Chart
-            new Chart(document.getElementById('adoptionMaturityChart'), {
-                type: 'doughnut',
-                data: {
-                    labels: ['Using AI', '"Mature" in AI Deployment'],
-                    datasets: [{
-                        data: [72, 1],
-                        backgroundColor: ['rgba(236, 72, 153, 0.7)', 'rgba(236, 72, 153, 0.2)'],
-                        borderColor: ['#ec4899', '#ec4899'],
-                        circumference: 180,
-                        rotation: 270,
-                    }]
-                },
-                options: {
-                    responsive: true, maintainAspectRatio: false,
-                    plugins: {
-                        title: { display: true, text: 'Enterprise Adoption (72%) vs. Maturity (1%)', font: { size: 16 }, color: '#e2e8f0' },
-                        legend: { display: false }
-                    },
-                    cutout: '70%'
-                }
-            });
-
-            // Elo Score Chart
-            new Chart(document.getElementById('eloScoreChart'), {
-                type: 'line',
-                data: {
-                    labels: ['Jan 2024', 'Feb 2025'],
-                    datasets: [{
-                        label: 'Gap between top closed & open model',
-                        data: [8.04, 1.70],
-                        borderColor: '#22d3ee',
-                        tension: 0.1,
-                        fill: false
-                    }]
-                },
-                options: {
-                    responsive: true, maintainAspectRatio: false,
-                    plugins: {
-                        title: { display: true, text: 'Performance Gap (Elo %)', font: { size: 16 }, color: '#e2e8f0' }
-                    },
-                    scales: { y: { beginAtZero: true, grid: { color: '#1e293b' } }, x: { grid: { display: false } } }
-                }
-            });
-        });
-    </script>
 </body>
 </html>
