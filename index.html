@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The State of AI: H1 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(0, 0, 0, 0.07);
+        }
+        .header-title {
+            color: #212529;
+            font-weight: 700;
+        }
+        .section-title {
+            color: #003366; /* A deep corporate blue */
+            font-weight: 600;
+            border-bottom: 2px solid #0055a4;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .stat-value {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            color: #0055a4; /* A strong, professional blue */
+        }
+        .stat-label {
+            color: #6c757d;
+            font-weight: 500;
+        }
+        .chart-bar {
+            background-color: #007bff; /* Standard bootstrap primary blue */
+        }
+        .chart-bar-china {
+             background-color: #fd7e14; /* A contrasting orange */
+        }
+        .highlight-text {
+            color: #003366;
+            font-weight: 600;
+        }
+        .print-hide {
+             display: block;
+        }
+
+        @media print {
+            body {
+                background-color: #ffffff;
+                color: #000000;
+            }
+            .card {
+                border: 1px solid #ccc;
+                box-shadow: none;
+            }
+            .print-hide {
+                display: none;
+            }
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 md:p-8 lg:p-12">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAFeCAYAAABq+sLfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGgAAP+lSURBVHic7N13fFzV9f/xT2/d6k66k253pZt0l0ISCAkhkBBIAgkkkBBIAgnpbiXd6erWq/W+t/f9/f7Y2957b9e2d7Vb8D7P4/F4PJ/P5/N5Pj/P5+x97bXXPggEAsGfQCAQCAQCwZ9AIBAIBAKB4E+gEAgEAoFA8CdQCAQCgUAg+BMoBAKBQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkUAgGAQCAQ/AkU-logo-black-png-1.png" alt="SparkLabs Logo" class="h-12 md:h-16 mx-auto mb-6">
+            <h1 class="header-title text-4xl md:text-5xl">The State of AI</h1>
+            <p class="text-lg md:text-xl text-gray-600 mt-2">H1 2025 Report Summary: From Hype to Harbinger</p>
+            <button onclick="window.print()" class="print-hide mt-6 px-6 py-2 bg-blue-600 text-white font-semibold rounded-md shadow-md hover:bg-blue-700 transition-colors">Print to PDF</button>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+            <!-- Section 1: Global AI Economy -->
+            <section class="lg:col-span-3 card p-6 rounded-xl">
+                <h2 class="section-title text-2xl">Part I: The Global AI Economy</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card p-4 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-2 text-gray-800">Venture Capital</h3>
+                        <p class="stat-value text-5xl">$165B</p>
+                        <p class="stat-label">Captured by AI startups (53% of total VC funding).</p>
+                        <p class="mt-4 text-sm"><span class="highlight-text">Mega-Deals Dominating:</span> A $40B OpenAI deal inflated Q1 totals, with xAI ($10B) and Scale AI ($14.3B) following.</p>
+                    </div>
+                    <div class="card p-4 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-2 text-gray-800">Corporate Strategy</h3>
+                        <p class="stat-value text-5xl">47%</p>
+                        <p class="stat-label">of deal value from CVCs & direct corporate investments.</p>
+                        <p class="mt-4 text-sm"><span class="highlight-text">M&A for AI:</span> 64% of leaders plan to use M&A to acquire AI capabilities in the next year.</p>
+                    </div>
+                    <div class="card p-4 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-2 text-gray-800">Market Projections (2025)</h3>
+                        <p class="stat-value text-5xl">$757B</p>
+                        <p class="stat-label">Projected total AI market size.</p>
+                        <p class="mt-4 text-sm"><span class="highlight-text">GenAI Growth:</span> Projected to hit $1.005 Trillion by 2034 (44.2% CAGR).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Geopolitical Arena -->
+            <section class="md:col-span-2 lg:col-span-2 card p-6 rounded-xl">
+                <h2 class="section-title text-2xl">Part II: The Geopolitical Arena</h2>
+                <h3 class="font-semibold text-xl mb-2 text-gray-800">The Superpower Duality: US vs. China</h3>
+                <p class="stat-label mb-4">Private AI Investment in 2024</p>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-semibold text-gray-700">USA</span>
+                            <span class="stat-value text-xl">$109.1 B</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-4">
+                            <div class="chart-bar h-4 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-semibold text-gray-700">China</span>
+                            <span class="stat-value text-xl">$9.3 B</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-4">
+                            <div class="chart-bar-china h-4 rounded-full" style="width: 8.5%"></div>
+                        </div>
+                    </div>
+                </div>
+                 <p class="mt-4 text-sm text-gray-600"><span class="highlight-text">Capability Gap Closing:</span> The US lead on key benchmarks like MMLU has shrunk to just 0.3 points from 17.5 points in a year.</p>
+            </section>
+            
+            <!-- Section 3: Emerging Powers -->
+            <section class="card p-6 rounded-xl">
+                <h2 class="section-title text-xl">Emerging Powers</h2>
+                 <ul class="space-y-3 text-gray-700">
+                    <li><span class="font-semibold text-blue-800">EU:</span> "InvestAI" program targets €200B for innovation.</li>
+                    <li><span class="font-semibold text-blue-800">India:</span> "IndiaAI" initiative with $1.25B+ government funding.</li>
+                    <li><span class="font-semibold text-blue-800">UK:</span> $4.5B in private AI investment in 2024.</li>
+                    <li><span class="font-semibold text-blue-800">Singapore:</span> Aims to triple its AI talent pool to 15,000.</li>
+                </ul>
+            </section>
+
+            <!-- Section 4: Enterprise Frontline -->
+            <section class="lg:col-span-3 card p-6 rounded-xl">
+                <h2 class="section-title text-2xl">Part III: The Enterprise Frontline</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center p-4">
+                        <p class="stat-value text-6xl">72%</p>
+                        <p class="font-semibold mt-2">of companies report using AI.</p>
+                        <p class="stat-label text-sm">(But only 1% describe their usage as "mature")</p>
+                    </div>
+                    <div class="text-center p-4">
+                        <p class="stat-value text-6xl">25%</p>
+                        <p class="font-semibold mt-2">of organizations have a defined AI roadmap.</p>
+                        <p class="stat-label text-sm">(Strategy boosts success rate from 37% to 80%)</p>
+                    </div>
+                    <div class="text-center p-4">
+                        <p class="stat-value text-6xl">19%</p>
+                        <p class="font-semibold mt-2">report revenue increases >5% from AI.</p>
+                        <p class="stat-label text-sm">(Median ROI is just 10%, yet optimism is high)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Technology Frontier -->
+            <section class="md:col-span-2 card p-6 rounded-xl">
+                 <h2 class="section-title text-2xl">Part V: The Technology Frontier</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2 text-gray-800">The Model Arms Race</h3>
+                        <p class="stat-label">Performance on the SWE-bench (coding) benchmark:</p>
+                        <p class="stat-value text-5xl">71.7%</p>
+                        <p class="stat-label">A jump from just 4.4% in one year.</p>
+                        <p class="mt-4 text-sm"><span class="highlight-text">Efficiency Paradigm:</span> Model size for high performance reduced 142-fold since 2022.</p>
+                    </div>
+                    <div class="p-4">
+                         <h3 class="font-semibold text-lg mb-2 text-gray-800">The Hardware Backbone</h3>
+                        <p class="stat-label">Hyperscaler CapEx on AI infrastructure:</p>
+                        <p class="stat-value text-5xl">$220B</p>
+                        <p class="stat-label">Estimated for 2025.</p>
+                        <p class="mt-4 text-sm"><span class="highlight-text">Energy Imperative:</span> AI is projected to drive a 165% increase in data center power demand by 2030.</p>
+                    </div>
+                 </div>
+            </section>
+
+            <!-- Section 6: Human Dimension -->
+            <section class="card p-6 rounded-xl">
+                <h2 class="section-title text-xl">Part VI: Human Dimension</h2>
+                <h3 class="font-semibold text-lg mb-2 text-gray-800">Future of Work</h3>
+                <p class="stat-value text-5xl">56%</p>
+                <p class="stat-label">Wage premium for specialized AI skills, up from 25% last year.</p>
+                <p class="mt-4 text-sm"><span class="highlight-text">Skills Reshuffle:</span> Core skills for AI-exposed jobs are changing 66% faster.</p>
+            </section>
+            
+            <!-- Section 7: Sector Deep Dives -->
+            <section class="lg:col-span-3 card p-6 rounded-xl">
+                <h2 class="section-title text-2xl">Part IV: Sector Deep Dives</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="card p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800">Financial Services</h4>
+                        <p class="stat-value text-4xl mt-2">88%</p>
+                        <p class="text-xs stat-label mt-1">of firms report tangible revenue growth from AI.</p>
+                    </div>
+                    <div class="card p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800">Healthcare</h4>
+                        <p class="stat-value text-4xl mt-2">30%</p>
+                        <p class="text-xs stat-label mt-1">of new drugs in 2025 pipeline to be AI-discovered.</p>
+                    </div>
+                    <div class="card p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800">Professional Services</h4>
+                        <p class="stat-value text-4xl mt-2">50%</p>
+                        <p class="text-xs stat-label mt-1">of legal/tax pros use GenAI in daily work.</p>
+                    </div>
+                    <div class="card p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800">Education</h4>
+                        <p class="stat-value text-4xl mt-2">92%</p>
+                        <p class="text-xs stat-label mt-1">of undergrads use GenAI for studies.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-12 text-gray-500 text-sm">
+            <p>Source: The State of AI: H1 2025 — The AI Global Report v7 - Summary</p>
+            <p>Infographic generated by Gemini.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
