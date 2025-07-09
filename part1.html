@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The State of AI: H1 2025 Report - Part I Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide-react@0.292.0/dist/lucide-react.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0e1a;
+            color: #e0e0e0;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .section-title-border {
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        .section-title-border::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #38bdf8, #a78bfa);
+        }
+        .chart-bar {
+            transition: width 1.5s ease-in-out;
+        }
+        @keyframes grow {
+            from { width: 0%; }
+        }
+        .animate-grow {
+            animation: grow 1.5s ease-in-out forwards;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Title -->
+    <header class="py-8 md:py-12 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-sm font-semibold uppercase tracking-widest text-sky-400">The AI Global Report</h2>
+            <h1 class="text-4xl md:text-6xl font-extrabold mt-2 text-white">Part I: The Global AI Economy</h1>
+            <p class="text-xl md:text-2xl mt-4 gradient-text font-medium">A Detailed Analysis of H1 2025</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 pb-16">
+        
+        <!-- Part I: The Global AI Economy -->
+        <section id="economy" class="mb-16">
+            <div class="space-y-12">
+                <!-- Chapter 1: The Venture Capital Barbell -->
+                <div class="bg-slate-900/50 p-8 rounded-lg border border-slate-800">
+                    <h3 class="text-2xl font-bold text-sky-300 mb-2">Chapter 1: The Venture Capital Barbell: A Market of Extremes</h3>
+                    <p class="text-gray-400 mb-8">The H1 2025 venture landscape is defined by a stark contrast: a boom in mega-deals and seed-stage funding, which squeezes traditional mid-stage venture investments. AI-focused startups captured an impressive $165 billion (53%) of the total $310 billion in global VC funding.</p>
+                    
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="font-bold text-lg text-white mb-4">The Heavy End of the Barbell: Mega-Deals</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-center">
+                                <div class="stat-card p-4 rounded-lg"><p class="text-2xl font-bold text-white">$10B</p><p class="text-sm text-gray-400">xAI</p></div>
+                                <div class="stat-card p-4 rounded-lg"><p class="text-2xl font-bold text-white">$14.3B</p><p class="text-sm text-gray-400">Scale AI</p></div>
+                                <div class="stat-card p-4 rounded-lg"><p class="text-2xl font-bold text-white">$3.5B</p><p class="text-sm text-gray-400">Anthropic</p></div>
+                                <div class="stat-card p-4 rounded-lg"><p class="text-2xl font-bold text-white">$2B</p><p class="text-sm text-gray-400">Safe Superintelligence</p></div>
+                                <div class="stat-card p-4 rounded-lg"><p class="text-2xl font-bold text-white">$2B</p><p class="text-sm text-gray-400">Thinking Machines Lab</p></div>
+                                <div class="stat-card p-4 rounded-lg"><p class="text-2xl font-bold text-white">$270M</p><p class="text-sm text-gray-400">Avg. Late-Stage Deal</p></div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="font-bold text-lg text-white mb-4">The Squeezed Middle: Venture-Scale Contraction</h4>
+                                <p class="text-gray-400 mb-4">While top-line funding numbers are high, the number of individual deals has fallen to a five-year low of just <strong class="text-rose-400">2,101 in Q1 2025</strong>, a marked decrease from 2,516 in Q1 2024 and a steep drop from 3,022 in Q1 2022.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white mb-4">The Other End of the Barbell: The Seed-Stage</h4>
+                                <p class="text-gray-400 mb-4">The share of new VC fund launches dedicated to AI is projected to reach <strong class="text-emerald-400">24.5% in 2025</strong>, a massive increase from just 5.4% in 2022. Y Combinator's Winter 2025 batch saw 82% of its startups being AI-related.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 2: Corporate and Private Equity Strategy -->
+                <div class="bg-slate-900/50 p-8 rounded-lg border border-slate-800">
+                    <h3 class="text-2xl font-bold text-fuchsia-300 mb-2">Chapter 2: Corporate & Private Equity Strategy</h3>
+                    <p class="text-gray-400 mb-8">Corporations and PE firms have become major forces in the AI landscape, doubling down on investments and acquisitions to integrate AI capabilities. Corporate-backed startup funding more than doubled to over $129 billion in H1 2025.</p>
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-center"><svg class="w-6 h-6 mr-4 text-fuchsia-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>CVCs & direct corporate investments account for <strong class="text-white mx-2">47%</strong> of all deal value.</li>
+                        <li class="flex items-center"><svg class="w-6 h-6 mr-4 text-fuchsia-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h6m-6 4h6m-6 4h6"></path></svg><strong class="text-white mr-2">64%</strong> of leaders plan to use M&A to acquire AI talent.</li>
+                        <li class="flex items-center"><svg class="w-6 h-6 mr-4 text-fuchsia-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg><strong class="text-white mr-2">95%</strong> of PE firms plan to multiply their AI investments.</li>
+                    </ul>
+                </div>
+
+                <!-- Chapter 3: Market Projections and Economic Impact -->
+                <div class="bg-slate-900/50 p-8 rounded-lg border border-slate-800">
+                    <h3 class="text-2xl font-bold text-teal-300 mb-2">Chapter 3: Market Projections and Economic Impact</h3>
+                    <p class="text-gray-400 mb-8">The economic footprint of AI is set to expand dramatically. Projections show a path to a multi-trillion dollar market, with generative AI alone expected to grow at a staggering 44.2% CAGR to reach over $1 trillion by 2034.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-lg text-white mb-4">Market Size Forecasts (2025)</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-baseline p-3 bg-slate-800/50 rounded-lg"><span>Total AI Market</span><span class="font-bold text-xl">$757.58B</span></div>
+                                <div class="flex justify-between items-baseline p-3 bg-slate-800/50 rounded-lg"><span>Generative AI Software</span><span class="font-bold text-xl">$37.89B</span></div>
+                                <div class="flex justify-between items-baseline p-3 bg-slate-800/50 rounded-lg"><span>AI Hardware Market</span><span class="font-bold text-xl">$65.32B</span></div>
+                                <div class="flex justify-between items-baseline p-3 bg-slate-800/50 rounded-lg"><span>AI Chip Market</span><span class="font-bold text-xl">$52B</span></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white mb-4">Macroeconomic Impact</h4>
+                             <p class="text-gray-400 mb-4">Widespread AI adoption could boost global GDP by an additional <strong class="text-teal-400">15 percentage points by 2035</strong> (PwC), while a conservative estimate projects a long-term opportunity of <strong class="text-teal-400">$4.4 trillion</strong> in added productivity growth from corporate use cases (McKinsey).</p>
+                             <h4 class="font-bold text-lg text-white mt-6 mb-4">Value Distribution by Function</h4>
+                             <div class="w-full bg-gray-700 rounded-full h-4 flex">
+                                <div class="bg-sky-500" style="width: 28%" title="Sales & Marketing: 28%"></div>
+                                <div class="bg-teal-500" style="width: 25%" title="Software Engineering: 25%"></div>
+                                <div class="bg-indigo-500" style="width: 11%" title="Customer Service: 11%"></div>
+                                <div class="bg-purple-500" style="width: 9%" title="R&D: 9%"></div>
+                                <div class="bg-gray-600" style="width: 27%" title="Other"></div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-slate-800 mt-12 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center text-gray-500">
+            <p>&copy; 2025 AI Global Report. All Rights Reserved.</p>
+            <p class="text-xs mt-2">This document is a visual interpretation of "The State of AI: H1 2025" summary. Data is sourced from the provided document.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The State of AI: H1 2025 Report - Part II Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide-react@0.292.0/dist/lucide-react.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0e1a;
+            color: #e0e0e0;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #fb923c, #f472b6, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .section-title-border {
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        .section-title-border::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #fb923c, #f472b6);
+        }
+        .chart-bar {
+            transition: width 1.5s ease-in-out;
+        }
+        @keyframes grow {
+            from { width: 0%; }
+        }
+        .animate-grow {
+            animation: grow 1.5s ease-in-out forwards;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Title -->
+    <header class="py-8 md:py-12 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-sm font-semibold uppercase tracking-widest text-amber-400">The AI Global Report</h2>
+            <h1 class="text-4xl md:text-6xl font-extrabold mt-2 text-white">Part II: The Geopolitical Arena</h1>
+            <p class="text-xl md:text-2xl mt-4 gradient-text font-medium">A Detailed Analysis of H1 2025</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 pb-16">
+        
+        <!-- Part II: The Geopolitical Arena -->
+        <section id="geopolitics" class="mb-16">
+            <div class="space-y-12">
+                <!-- Chapter 4: The Superpower Duality -->
+                <div class="bg-slate-900/50 p-8 rounded-lg border border-slate-800">
+                    <h3 class="text-2xl font-bold text-amber-300 mb-2">Chapter 4: The Superpower Duality: United States vs. China</h3>
+                    <p class="text-gray-400 mb-8">While the U.S. maintains a significant lead in private AI investment, China is leveraging massive state-backed funds to rapidly close the technological capability gap, creating a tense duality at the top of the global AI landscape.</p>
+                    
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="font-bold text-lg text-white mb-4">Investment and Infrastructure</h4>
+                            <p class="text-gray-400 mb-4">In 2024, private AI investment in the U.S. ($109.1 billion) was nearly <strong class="text-white">12 times greater</strong> than in China ($9.3 billion). By Q1 2025, total corporate AI investment in the U.S. reached $189 billion, representing 65% of the global total. Major infrastructure projects include the <strong class="text-amber-400">$500B Microsoft/OpenAI "Stargate Project"</strong> and China's <strong class="text-amber-400">$47.5B semiconductor fund</strong>.</p>
+                            <div class="w-full bg-gray-800 p-4 rounded-lg">
+                                <p class="text-sm font-medium text-gray-300 mb-2">Private AI Investment (2024)</p>
+                                <div class="flex items-center mb-2">
+                                    <span class="w-20 text-right mr-4 text-white">U.S.</span>
+                                    <div class="flex-1 bg-gray-700 rounded-full h-6">
+                                        <div class="bg-blue-500 h-6 rounded-full flex items-center justify-start pl-3 animate-grow" style="width: 100%;"><span class="font-bold text-white text-sm">$109.1B</span></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-20 text-right mr-4 text-white">China</span>
+                                    <div class="flex-1 bg-gray-700 rounded-full h-6">
+                                        <div class="bg-red-500 h-6 rounded-full flex items-center justify-start pl-3 animate-grow" style="width: 8.5%;"><span class="font-bold text-white text-sm">$9.3B</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-lg text-white mb-4">The Closing Capability Gap</h4>
+                            <p class="text-gray-400 mb-4">Despite the investment disparity, China is making rapid progress. In 2024, U.S. institutions produced 40 notable AI models to China's 15, but the performance gap on key benchmarks is shrinking dramatically.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                                <div class="stat-card p-4 rounded-lg">
+                                    <p class="text-gray-400">MMLU Benchmark Gap</p>
+                                    <p class="text-2xl font-bold text-white">17.5% <span class="text-base font-normal text-gray-400">to</span> 0.3%</p>
+                                    <p class="text-xs text-gray-500">U.S. lead reduction in 2024</p>
+                                </div>
+                                <div class="stat-card p-4 rounded-lg">
+                                    <p class="text-gray-400">HumanEval Gap</p>
+                                    <p class="text-2xl font-bold text-white">31.6% <span class="text-base font-normal text-gray-400">to</span> 3.7%</p>
+                                    <p class="text-xs text-gray-500">U.S. lead reduction in 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 5: The Emerging Multi-Polar AI World -->
+                <div class="bg-slate-900/50 p-8 rounded-lg border border-slate-800">
+                    <h3 class="text-2xl font-bold text-purple-300 mb-2">Chapter 5: The Emerging Multi-Polar AI World</h3>
+                    <p class="text-gray-400 mb-8">Beyond the U.S. and China, other nations are launching significant, well-funded national strategies to foster domestic AI ecosystems and compete on the global stage.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- European Union -->
+                        <div class="stat-card p-6 rounded-lg">
+                            <h4 class="font-bold text-lg text-white mb-3">European Union</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start"><svg class="w-4 h-4 mr-2 mt-0.5 text-purple-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span><strong class="text-white">"InvestAI" Program:</strong> €200B target</span></li>
+                                <li class="flex items-start"><svg class="w-4 h-4 mr-2 mt-0.5 text-purple-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span><strong class="text-white">AI Gigafactories:</strong> €20B allocation</span></li>
+                                <li class="flex items-start"><svg class="w-4 h-4 mr-2 mt-0.5 text-purple-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span><strong class="text-white">Model Output:</strong> 3 notable models in 2024</span></li>
+                            </ul>
+                        </div>
+                        <!-- India & UK -->
+                        <div class="stat-card p-6 rounded-lg">
+                            <h4 class="font-bold text-lg text-white mb-3">India & United Kingdom</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start"><svg class="w-4 h-4 mr-2 mt-0.5 text-purple-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span><strong class="text-white">IndiaAI Initiative:</strong> $1.25B+ funding</span></li>
+                                <li class="flex items-start"><svg class="w-4 h-4 mr-2 mt-0.5 text-purple-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span><strong class="text-white">Microsoft in India:</strong> $3B investment</span></li>
+                                <li class="flex items-start"><svg class="w-4 h-4 mr-2 mt-0.5 text-purple-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span><strong class="text-white">UK Private Investment:</strong> $4.5B in 2024</span></li>
+                            </ul>
+                        </div>
+                        <!-- Singapore -->
+                        <div class="stat-card p-6 rounded-lg">
+                            <h4 class="font-bold text-lg text-white mb-3">Singapore</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start"><svg class="w-4 h-4 mr-2 mt-0.5 text-purple-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span><strong class="text-white">National AI Strategy 2.0:</strong> S$1B+</span></li>
+                                <li class="flex items-start"><svg class="w-4 h-4 mr-2 mt-0.5 text-purple-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span><strong class="text-white">Talent Goal:</strong> Triple core AI talent to 15,000</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-slate-800 mt-12 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center text-gray-500">
+            <p>&copy; 2025 AI Global Report. All Rights Reserved.</p>
+            <p class="text-xs mt-2">This document is a visual interpretation of "The State of AI: H1 2025" summary. Data is sourced from the provided document.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
